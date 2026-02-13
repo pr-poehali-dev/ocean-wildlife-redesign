@@ -1,12 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import SiteHeader from "@/components/SiteHeader";
+import HeroSection from "@/components/HeroSection";
+import KeyInfoSection from "@/components/KeyInfoSection";
+import ContentSections from "@/components/ContentSections";
+import VideoHighlight from "@/components/VideoHighlight";
+import ContactSection from "@/components/ContactSection";
+import SiteFooter from "@/components/SiteFooter";
+import StickyCTA from "@/components/StickyCTA";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <SiteHeader />
+      <HeroSection />
+      <KeyInfoSection />
+      <ContentSections />
+      <VideoHighlight />
+      <ContactSection />
+      <SiteFooter />
+      <StickyCTA />
     </div>
   );
 };
