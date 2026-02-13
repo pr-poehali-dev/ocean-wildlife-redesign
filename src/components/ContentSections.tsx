@@ -11,36 +11,56 @@ const sections = [
     id: "the-trip",
     icon: "Compass",
     title: "The Trip",
-    content:
-      "Detailed itinerary and expedition overview will be displayed here. Day-by-day breakdown of the journey from arrival to departure.",
+    paragraphs: [
+      "The trip to East Timor is a trip to the largest animals that have ever inhabited our planet. Being in the same element as a 25-meter-long blue whale is an incredible experience that cannot be properly described. Swimming with a blue whale has to be experienced to be believed!",
+      "We take a small but comfortable boat directly from the capital Dili out onto the often mirror-smooth water every day to get close to the giants of the sea. Normally, we spend about 6 hours at sea. Before the wind often picks up in the late afternoon, we come back ashore to recover from our adventures at sea.",
+      "During our time in Asia's youngest country, we are accommodated in a beautiful hotel right by the sea, just a few minutes from the jetty.",
+      "We have also 1-2 smaller excursions planned for the later afternoons and evenings to introduce you to this exciting country and its cuisine.",
+    ],
   },
   {
     id: "the-animals",
     icon: "Fish",
     title: "The Animals",
-    content:
-      "Information about Blue whales, Sperm whales, and other marine wildlife you may encounter during the expedition.",
+    paragraphs: [
+      "The aim of this trip is to encounter the largest animal that has ever roamed our beautiful planet, the blue whale, in the water. Around 1,500 blue whales spend the southern winter in the Banda Sea to breed. To get to the feeding grounds in southern Australia, hundreds of animals use a current that runs southwest along the coast of East Timor every year. On a good day, we can observe up to 25 animals in small groups, sometimes just a few meters from the coast.",
+      "Swimming with a blue whale is one of the most impressive things you can experience. These 25-metre-long colossi glide gently past us on their journey south.",
+      "We also often see sperm whales, which live around the Indonesian islands all year round. When they appear off Dili, the largest toothed whales in the world often stay for a few days.",
+      "There are also various species of dolphin (e.g. Borneo dolphins, bottlenose dolphins or spotted dolphins), as well as pilot whales and, rarely, orcas.",
+      "Swimming with toothed whales and dolphins is a little more complicated than with the blue whales, as sperm whales in particular are still hunted in this region to this day and are correspondingly shy.",
+      "Swimming with blue whales, on the other hand, is less difficult. The giants are not disturbed by us during their migration and often pass us by within a few meters.",
+    ],
   },
   {
     id: "accommodation",
     icon: "Hotel",
     title: "Accommodation & Catering",
-    content:
-      "Details about lodging facilities, meal plans, dietary accommodations, and the overall comfort experience on-site.",
+    paragraphs: [
+      "Throughout our time in East Timor, we stay in one of the most beautiful hotels in East Timor, right on the coast of Dili. The rooms are pleasantly modern and also have air conditioning. The hotel also has a pool area and a small fitness studio.",
+      "In the hotel's own restaurant, we enjoy a rich breakfast buffet every morning and occasionally also dinner.",
+      "We also visit other selected restaurants in the evening to introduce you to Portuguese-Asian fusion cuisine.",
+      "Lunch is taken at sea in the form of sandwiches and other cold dishes.",
+    ],
   },
   {
     id: "daily-programme",
     icon: "Clock",
     title: "Daily Programme",
-    content:
-      "Typical daily schedule from morning briefings to evening activities. Times are approximate and weather-dependent.",
+    paragraphs: [
+      "Our day starts relatively early to make the most of the windless hours at sea. We arrive at the boats at around 8 a.m. to go in search of the giants of the sea.",
+      "After a hopefully successful day, we return to land at around 2 pm. After a well-deserved break, we meet up at around 4 pm for a short excursion to a local attraction or a little later for a sundowner drink! We round off the day with a great dinner.",
+    ],
   },
   {
     id: "equipment",
     icon: "Camera",
     title: "Equipment & Photography",
-    content:
-      "Recommended gear, what we provide, underwater camera rental options, and photography tips for whale encounters.",
+    paragraphs: [
+      "East Timor has a tropical climate. The high temperatures invite us to wear short clothing. Even in the evening, short clothing is no problem, we recommend a polo shirt or a light shirt. Don't forget to pack suitable sun protection!",
+      "We are happy to provide diving goggles, snorkels and fins for our excursions to the sea. However, we recommend that you bring your own equipment that you are used to. Swimming with whales is not scuba diving! If you wish you can free dive, but without a tank.",
+      "Due to the pleasant water temperatures, a wetsuit is not necessary. However, we can also provide one if required.",
+      "For photographers, we recommend lenses with a medium range above the water surface. Underwater, you can take excellent photos of blue whales with small lenses (up to 30mm). However, great photos and videos can also be taken with smaller cameras such as GoPros.",
+    ],
   },
 ];
 
@@ -77,8 +97,14 @@ const ContentSections = () => {
                     </span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pb-6 pl-14 text-gray-600 leading-relaxed">
-                  {section.content}
+                <AccordionContent className="pb-6 pl-14">
+                  <div className="space-y-4">
+                    {section.paragraphs.map((p, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed text-[15px]">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}

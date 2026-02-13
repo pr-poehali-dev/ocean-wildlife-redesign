@@ -3,9 +3,18 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const images = [
-  "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/c11b82a4-ab67-4e53-a2e3-06d42f2d74ba.jpg",
-  "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/d634e5d8-44b6-437e-9a9f-0963a78346ce.jpg",
-  "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/e2bb2395-85af-461c-b992-2d1c04b6b965.jpg",
+  {
+    src: "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/c11b82a4-ab67-4e53-a2e3-06d42f2d74ba.jpg",
+    alt: "Blue whale in East Timor, swimming with blue whales",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/d634e5d8-44b6-437e-9a9f-0963a78346ce.jpg",
+    alt: "Swimming with Sperm whales in East Timor",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/94e93177-47cb-4a25-a003-83c4280b945d/files/e2bb2395-85af-461c-b992-2d1c04b6b965.jpg",
+    alt: "Dili in Timor Leste",
+  },
 ];
 
 const HeroSection = () => {
@@ -48,8 +57,8 @@ const HeroSection = () => {
             <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
                 <img
-                  src={images[current]}
-                  alt="Wildlife expedition"
+                  src={images[current].src}
+                  alt={images[current].alt}
                   className="w-full h-full object-cover transition-opacity duration-500"
                 />
 
@@ -71,7 +80,7 @@ const HeroSection = () => {
                     className="flex items-center gap-1.5 bg-black/40 backdrop-blur-sm text-white text-xs font-medium px-3 py-2 rounded-lg hover:bg-black/60 transition-colors"
                   >
                     <Icon name="Maximize2" size={14} />
-                    Full screen
+                    Display in full screen mode
                   </button>
                 </div>
 
@@ -99,8 +108,8 @@ const HeroSection = () => {
           onClick={() => setFullscreen(false)}
         >
           <img
-            src={images[current]}
-            alt="Wildlife expedition"
+            src={images[current].src}
+            alt={images[current].alt}
             className="max-w-full max-h-full object-contain"
           />
           <button

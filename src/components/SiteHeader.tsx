@@ -10,6 +10,39 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
+const seaToursWater = [
+  "Swimming with Blue Whales in East Timor",
+  "Swimming with Humpback Whales off La Reunion",
+  "Swimming with Orcas & Humpback Whales in Norway",
+  "Swimming with Humpback Whales in Tonga",
+  "Whales & Leopards in Sri Lanka",
+  "Swimming with Humpback Whales in the Dom. Rep.",
+  "Whales & Fire in Vanuatu",
+  "Humpback Whales & Whale Sharks in Mozambique",
+  "Whale Sharks in St. Helena",
+];
+
+const seaToursBoat = [
+  "Big Whales off the Azores",
+  "Humpback Whale supergroups off South Africa",
+  "Whales, Penguins and Sharks in South Africa",
+  "Dolphins & Whales off Madeira",
+  "Whales & Dolphins off La Gomera",
+  "Humpback Whales in the Cape Verde Islands",
+  "Dolphins & Whales off Tarifa, Spain",
+];
+
+const landTours = [
+  "Brown Bears in Slovenia",
+  "Tigers, Leopards & Co. in India",
+  "Bears, Wolves & Owls in Finland",
+  "Orangutans in Sumatra",
+  "Lynx, Vultures & Co. in Spain",
+  "Owls & Migratory Birds in England",
+  "Ibexes, beavers & co. in Switzerland",
+  "Gorillas, Chimpanzees & Safari in Uganda",
+];
+
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -27,62 +60,92 @@ const SiteHeader = () => {
           </a>
 
           <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-0.5">
               <NavigationMenuItem>
-                <NavigationMenuLink className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
+                <NavigationMenuLink className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
                   About Us
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
+                <NavigationMenuLink className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
                   Our Team
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
+                <NavigationMenuLink className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
                   Our Partners
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium text-gray-600 hover:text-ocean">
+                <NavigationMenuTrigger className="text-sm font-medium text-gray-600 hover:text-ocean bg-transparent">
                   Sea Tours
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-48 p-3">
-                    <a className="block px-3 py-2 text-sm text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer">
+                  <div className="w-[540px] p-5">
+                    <a className="block px-3 py-2 text-sm font-semibold text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer mb-3">
                       All Sea Tours
                     </a>
-                    <a className="block px-3 py-2 text-sm text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer">
-                      In the water
-                    </a>
-                    <a className="block px-3 py-2 text-sm text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer">
-                      On the boat
-                    </a>
+                    <div className="grid grid-cols-2 gap-x-8">
+                      <div>
+                        <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-gray-400 mb-1">
+                          In the water
+                        </div>
+                        {seaToursWater.map((tour) => (
+                          <a
+                            key={tour}
+                            className="block px-3 py-1.5 text-[13px] text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer leading-snug"
+                          >
+                            {tour}
+                          </a>
+                        ))}
+                      </div>
+                      <div>
+                        <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-gray-400 mb-1">
+                          On the boat
+                        </div>
+                        {seaToursBoat.map((tour) => (
+                          <a
+                            key={tour}
+                            className="block px-3 py-1.5 text-[13px] text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer leading-snug"
+                          >
+                            {tour}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium text-gray-600 hover:text-ocean">
+                <NavigationMenuTrigger className="text-sm font-medium text-gray-600 hover:text-ocean bg-transparent">
                   Land Tours
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-48 p-3">
-                    <a className="block px-3 py-2 text-sm text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer">
+                  <div className="w-[280px] p-4">
+                    <a className="block px-3 py-2 text-sm font-semibold text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer mb-1">
                       All Land Tours
                     </a>
+                    {landTours.map((tour) => (
+                      <a
+                        key={tour}
+                        className="block px-3 py-1.5 text-[13px] text-gray-700 hover:text-ocean hover:bg-ocean-light rounded-md transition-colors cursor-pointer leading-snug"
+                      >
+                        {tour}
+                      </a>
+                    ))}
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
+                <NavigationMenuLink className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
                   Blog
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
+                <NavigationMenuLink className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-ocean transition-colors cursor-pointer">
                   Q&A
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -109,7 +172,7 @@ const SiteHeader = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-8 py-6 space-y-4">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-8 py-6 space-y-4 max-h-[80vh] overflow-y-auto">
           {["About Us", "Our Team", "Our Partners", "Sea Tours", "Land Tours", "Blog", "Q&A"].map(
             (item) => (
               <a key={item} className="block text-base text-gray-700 hover:text-ocean cursor-pointer">

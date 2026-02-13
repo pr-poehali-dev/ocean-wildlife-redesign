@@ -2,16 +2,19 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const dates2026 = [
-  { label: "Oct 12 – Oct 22, 2026", spots: "3 spots left" },
-  { label: "Nov 2 – Nov 12, 2026", spots: "5 spots left" },
-  { label: "Nov 23 – Dec 3, 2026", spots: "Available" },
-  { label: "Dec 14 – Dec 24, 2026", spots: "Available" },
+  { label: "Sun, Oct 18 – Sat, Oct 24, 2026" },
+  { label: "Sun, Oct 25 – Sat, Oct 31, 2026" },
+  { label: "Sun, Nov 1 – Sat, Nov 7, 2026" },
+  { label: "Sun, Nov 8 – Sat, Nov 14, 2026" },
+  { label: "Sun, Nov 15 – Sat, Nov 21, 2026" },
 ];
 
 const dates2027 = [
-  { label: "Jan 10 – Jan 20, 2027", spots: "Available" },
-  { label: "Feb 1 – Feb 11, 2027", spots: "Available" },
-  { label: "Mar 5 – Mar 15, 2027", spots: "Available" },
+  { label: "Sun, Oct 17 – Sat, Oct 23, 2027" },
+  { label: "Sun, Oct 24 – Sat, Oct 30, 2027" },
+  { label: "Sun, Oct 31 – Sat, Nov 6, 2027" },
+  { label: "Sun, Nov 7 – Sat, Nov 13, 2027" },
+  { label: "Sun, Nov 14 – Sat, Nov 20, 2027" },
 ];
 
 interface InfoCardProps {
@@ -41,7 +44,7 @@ const DateGroup = ({
   dates,
 }: {
   year: string;
-  dates: { label: string; spots: string }[];
+  dates: { label: string }[];
 }) => {
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? dates : dates.slice(0, 2);
@@ -55,21 +58,12 @@ const DateGroup = ({
         {visible.map((d, i) => (
           <div
             key={i}
-            className="flex items-center justify-between py-2 px-3 rounded-lg bg-gray-50 text-sm"
+            className="flex items-center py-2 px-3 rounded-lg bg-gray-50 text-sm"
           >
             <div className="flex items-center gap-2">
               <Icon name="Calendar" size={14} className="text-ocean" />
               <span className="text-gray-800 font-medium">{d.label}</span>
             </div>
-            <span
-              className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                d.spots.includes("left")
-                  ? "bg-amber-50 text-amber-700"
-                  : "bg-green-50 text-green-700"
-              }`}
-            >
-              {d.spots}
-            </span>
           </div>
         ))}
       </div>
@@ -121,35 +115,41 @@ const KeyInfoSection = () => {
 
           <div className="space-y-4">
             <InfoCard icon="MapPin" label="Where">
-              East Timor (Timor-Leste)
+              <p>Start: On Sunday at the airport in Dili depending on arrival time</p>
+              <p className="mt-1">End: On the following Saturday after checkout</p>
             </InfoCard>
             <InfoCard icon="Users" label="Group">
-              Max. 8 participants per expedition
+              Maximum 8 people + guides
             </InfoCard>
             <InfoCard icon="Shield" label="Accompaniment">
-              Expert marine biologist + local guides
+              English-speaking guide from Moby Wildlife Tours + local guide
             </InfoCard>
           </div>
 
           <InfoCard icon="Wallet" label="Costs">
-            Starting from €4,950 per person
+            <p>EUR 4,390 per person in a double room</p>
+            <p className="mt-1">Single room: + EUR 600</p>
           </InfoCard>
 
           <InfoCard icon="CheckCircle" label="Included">
-            Accommodation, meals, boat transfers, equipment, guide
+            Transportation, tours, accommodation, group meals, presentations about blue whales
           </InfoCard>
 
           <InfoCard icon="Star" label="Exclusive">
-            Private whale encounters, underwater photography session
+            Personal expenses, insurance, arrival and departure Dili
           </InfoCard>
 
           <InfoCard icon="Activity" label="Physical requirements">
-            Good swimming ability, basic snorkeling experience
+            <ul className="space-y-1">
+              <li>Be able to swim 100 meters with fins, mask and snorkel</li>
+              <li>Be able to lift yourself out of the water on a ladder</li>
+              <li>Dietary intolerances and intolerances can be taken into consideration</li>
+            </ul>
           </InfoCard>
 
           <div className="lg:col-span-2">
             <InfoCard icon="FileText" label="Notes">
-              Weather-dependent schedule. Minimum age 16 years. Travel insurance required.
+              This tour is intended for snorkelers and freedivers. No tank diving.
             </InfoCard>
           </div>
         </div>

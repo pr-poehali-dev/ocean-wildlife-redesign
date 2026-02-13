@@ -14,8 +14,8 @@ const ContactSection = () => {
           </h2>
         </div>
 
-        <p className="text-gray-500 mb-12 ml-4 text-sm">
-          Have questions about this expedition? We'd love to hear from you.
+        <p className="text-gray-500 mb-12 ml-4 text-sm max-w-2xl">
+          Are you already convinced or do you have any questions? Feel free to contact us via the contact form below, Whatsapp (+41 76 581 1893) or email (info@mobywildlifetours.com).
         </p>
 
         <div className="grid lg:grid-cols-2 gap-16">
@@ -85,7 +85,7 @@ const ContactSection = () => {
                   WhatsApp
                 </div>
                 <div className="text-sm text-gray-500">
-                  +49 123 456 7890
+                  +41 76 581 1893
                 </div>
                 <div className="text-xs text-gray-400 mt-1">
                   Typically replies within 2 hours
@@ -116,7 +116,7 @@ const ContactSection = () => {
                   Office
                 </div>
                 <div className="text-sm text-gray-500">
-                  Hamburg, Germany
+                  5702 Niederlenz, Switzerland
                 </div>
               </div>
             </div>

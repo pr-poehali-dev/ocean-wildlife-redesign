@@ -70,7 +70,7 @@ const SiteFooter = () => {
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <div className="flex items-center gap-1.5">
                 <Icon name="Phone" size={14} />
-                <span>+49 123 456 7890</span>
+                <span>+41 76 581 1893</span>
               </div>
               <span className="text-gray-700">|</span>
               <div className="flex items-center gap-1.5">
@@ -80,7 +80,7 @@ const SiteFooter = () => {
             </div>
 
             <div className="text-sm text-gray-600">
-              &copy; 2026 Moby Wildlife Tours GmbH
+              &copy; 2026 Moby Dick Tours GmbH, 5702 Niederlenz, Switzerland
             </div>
           </div>
         </div>
