@@ -23,18 +23,35 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Legacy ocean (kept for any remaining references)
 				ocean: {
-					DEFAULT: '#0E7490',
-					50: '#F0FDFA',
-					100: '#CCFBF1',
-					200: '#99F6E4',
-					300: '#5EEAD4',
-					400: '#2DD4BF',
-					500: '#0E7490',
-					600: '#0C6680',
-					700: '#0A5870',
-					800: '#084A60',
-					900: '#063B4E',
+					DEFAULT: '#00468C',
+					50: '#F0F7FF',
+					100: '#DAEEFF',
+					200: '#B0D9FF',
+					300: '#72BCFF',
+					400: '#2D96F8',
+					500: '#00468C',
+					600: '#003A78',
+					700: '#002E64',
+					800: '#002250',
+					900: '#001345',
+				},
+				// SEA brand tokens
+				sea: {
+					primary: '#001345',
+					accent: '#00468C',
+					text: '#4F5C71',
+					bg: '#F2F8FD',
+					textLight: '#D7EBFF',
+				},
+				// LAND brand tokens (micro-use only on Home)
+				land: {
+					primary: '#003610',
+					accent: '#166534',
+					text: '#6A7867',
+					bg: '#F7FDF2',
+					textLight: '#EDFFD7',
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

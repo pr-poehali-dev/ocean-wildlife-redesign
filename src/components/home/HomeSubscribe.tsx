@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const HomeSubscribe = () => {
@@ -12,30 +11,42 @@ const HomeSubscribe = () => {
   };
 
   return (
-    <section className="py-20 bg-ocean" id="subscribe">
+    <section
+      className="py-20"
+      style={{ background: "linear-gradient(135deg, #001345 0%, #00468C 100%)" }}
+      id="subscribe"
+    >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-5">
-            <Icon name="Mail" size={22} className="text-white" />
+        <div className="max-w-xl mx-auto text-center">
+
+          {/* Icon */}
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            style={{ backgroundColor: "rgba(215,235,255,0.12)", border: "1px solid rgba(215,235,255,0.18)" }}
+          >
+            <Icon name="Mail" size={24} className="text-[#D7EBFF]" />
           </div>
 
-          <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-3">
-            Subscribe
+          <h2 className="font-serif text-[28px] lg:text-[34px] font-bold text-white mb-3">
+            Stay Updated
           </h2>
-          <p className="text-white/70 text-[15px] leading-relaxed mb-8">
-            Sign up for the newsletter with your e-mail address to receive news and updates.
+          <p className="text-[#D7EBFF]/70 text-[15px] leading-relaxed mb-8">
+            Subscribe to our newsletter and be the first to hear about new expeditions, wildlife encounters, and trip availability.
           </p>
 
           {submitted ? (
             <div className="flex flex-col items-center gap-3 py-6 animate-fade-in">
-              <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-                <Icon name="CheckCircle2" size={28} className="text-white" />
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: "rgba(215,235,255,0.15)" }}
+              >
+                <Icon name="CheckCircle2" size={28} className="text-[#D7EBFF]" />
               </div>
-              <p className="text-white font-semibold text-lg">Thank you very much!</p>
-              <p className="text-white/60 text-sm">You're now subscribed to our newsletter.</p>
+              <p className="text-white font-semibold text-[18px]">Thank you very much!</p>
+              <p className="text-[#D7EBFF]/60 text-[14px]">You're now subscribed to our newsletter.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto">
               <div className="flex-1">
                 <label className="sr-only" htmlFor="newsletter-email">E-mail address</label>
                 <input
@@ -44,21 +55,31 @@ const HomeSubscribe = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-mail address"
-                  className="w-full h-12 px-4 rounded-xl bg-white/15 border border-white/25 text-white placeholder:text-white/45 text-[14px] focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
+                  placeholder="Your e-mail address"
+                  className="w-full h-12 px-4 rounded-xl text-[14px] text-white placeholder:text-[#D7EBFF]/40 focus:outline-none focus:ring-2 transition-all"
+                  style={{
+                    backgroundColor: "rgba(215,235,255,0.10)",
+                    border: "1px solid rgba(215,235,255,0.20)",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.border = "1px solid rgba(215,235,255,0.55)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.border = "1px solid rgba(215,235,255,0.20)";
+                  }}
                 />
               </div>
-              <Button
+              <button
                 type="submit"
-                className="h-12 px-7 bg-white text-ocean hover:bg-white/90 font-semibold rounded-xl text-[14px] shrink-0 transition-all"
+                className="h-12 px-7 bg-white hover:bg-[#D7EBFF] text-[#001345] font-semibold rounded-xl text-[14px] shrink-0 transition-all shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
               >
-                Register
-              </Button>
+                Subscribe
+              </button>
             </form>
           )}
 
-          <p className="text-white/40 text-[12px] mt-5 flex items-center justify-center gap-1.5">
-            <Icon name="Shield" size={12} />
+          <p className="text-[#D7EBFF]/35 text-[12px] mt-5 flex items-center justify-center gap-1.5">
+            <Icon name="Shield" size={11} />
             No spam. Unsubscribe at any time.
           </p>
         </div>
