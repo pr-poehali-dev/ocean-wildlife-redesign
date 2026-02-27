@@ -1,5 +1,6 @@
 import HomeNav from "@/components/home/HomeNav";
 import HomeHero from "@/components/home/HomeHero";
+import HomeIntro from "@/components/home/HomeIntro";
 import HomeExpeditions from "@/components/home/HomeExpeditions";
 import HomeAbout from "@/components/home/HomeAbout";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
@@ -11,6 +12,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-white">
       <HomeNav />
       <HomeHero />
+      <HomeIntro />
       <HomeExpeditions />
       <HomeAbout />
       <HomeTestimonials />
