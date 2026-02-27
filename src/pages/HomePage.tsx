@@ -2,7 +2,9 @@ import HomeNav from "@/components/home/HomeNav";
 import HomeHero from "@/components/home/HomeHero";
 import HomeExpeditions from "@/components/home/HomeExpeditions";
 import HomeAbout from "@/components/home/HomeAbout";
-import HomeTestimonialsPlaceholder from "@/components/home/HomeTestimonialsPlaceholder";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
+import HomeSubscribe from "@/components/home/HomeSubscribe";
+import HomeFooter from "@/components/home/HomeFooter";
 
 const HomePage = () => {
   return (
@@ -11,7 +13,9 @@ const HomePage = () => {
       <HomeHero />
       <HomeExpeditions />
       <HomeAbout />
-      <HomeTestimonialsPlaceholder />
+      <HomeTestimonials />
+      <HomeSubscribe />
+      <HomeFooter />
     </div>
   );
 };
