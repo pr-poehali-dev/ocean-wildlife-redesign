@@ -63,13 +63,17 @@ const HomeNav = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center gap-0.5">
-            {["About Us", "Our Team", "Our Partners"].map((item) => (
+            {[
+              { label: "About Us", href: "#" },
+              { label: "Our Team", href: "#" },
+              { label: "Our Partners", href: "/partners" },
+            ].map(({ label, href }) => (
               <a
-                key={item}
-                href="#"
+                key={label}
+                href={href}
                 className="px-3.5 py-2 text-[13px] font-medium text-[#4F5C71] hover:text-[#00468C] transition-colors rounded-lg hover:bg-[#F2F8FD]"
               >
-                {item}
+                {label}
               </a>
             ))}
 
@@ -206,17 +210,17 @@ const HomeNav = () => {
       {mobileOpen && (
         <div className="xl:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
           {[
-            { label: "About Us" },
-            { label: "Our Team" },
-            { label: "Our Partners" },
-            { label: "Sea Tours", color: "#00468C" },
-            { label: "Land Tours", color: "#166534" },
-            { label: "Blog" },
-            { label: "Q&A" },
+            { label: "About Us", href: "#" },
+            { label: "Our Team", href: "#" },
+            { label: "Our Partners", href: "/partners" },
+            { label: "Sea Tours", href: "#", color: "#00468C" },
+            { label: "Land Tours", href: "#", color: "#166534" },
+            { label: "Blog", href: "#" },
+            { label: "Q&A", href: "#" },
           ].map((item) => (
             <a
               key={item.label}
-              href="#"
+              href={item.href}
               className="flex items-center gap-2 py-2.5 text-[14px] font-medium text-[#001345] border-b border-slate-50"
             >
               {item.color && (
