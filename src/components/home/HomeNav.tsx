@@ -172,6 +172,13 @@ const HomeNav = () => {
               </a>
             ))}
 
+            <a
+              href="/contact"
+              className="px-3.5 py-2 text-[13px] font-medium text-[#4F5C71] hover:text-[#00468C] transition-colors rounded-lg hover:bg-[#F2F8FD]"
+            >
+              Contact
+            </a>
+
             <div className="w-px h-5 bg-slate-200 mx-1" />
 
             <a href="#" className="px-3 py-2 text-[12px] font-medium text-slate-400 hover:text-[#001345] transition-colors">
@@ -217,6 +224,7 @@ const HomeNav = () => {
             { label: "Land Tours", href: "#", color: "#166534" },
             { label: "Blog", href: "#" },
             { label: "Q&A", href: "/faq" },
+            { label: "Contact", href: "/contact" },
           ].map((item) => (
             <a
               key={item.label}
